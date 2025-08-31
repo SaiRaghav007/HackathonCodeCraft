@@ -1,0 +1,38 @@
+.countdown-container {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.countdown-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px #FFD700;
+  }
+  to {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px #FFD700, 0 0 30px #FFD700;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .countdown-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-text {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+}
