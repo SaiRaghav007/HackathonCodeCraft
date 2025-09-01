@@ -2,21 +2,31 @@ import "./AboutSection.css";
 import React from "react";
 import RetroBackground from "./RetroBackground";
 
-const coordinators = [
+const facultyCoordinators = [
+  {
+    name: "Dr.M.Nithya",
+    role: "Head Of Department",
+    phone: "8098857544",
+    email: "priya@sairam.edu",
+    photo: "src/images/hod.png"
+  },
   {
     name: "G.Yuvaraj",
     role: "Staff Coordinator",
     phone: "8098857544",
     email: "priya@sairam.edu",
-    photo: "/public/images/Aadhi.jpeg",
+    photo: "src/images/yuvaraj.png"
   },
   {
     name: "Mrs.Shiny",
     role: "Staff Coordinator",
     phone: "9962275202",
     email: "karthik@sairam.edu",
-    photo: "/public/images/Aadhi.jpeg",
+    photo: "src/images/shiny.png",
   },
+];
+
+const studentLeads = [
   {
     name: "S.M.Selva Vignesh",
     role: "Student Lead",
@@ -56,10 +66,26 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* Coordinators Section */}
-      <h2 className="grid-title">Coordinators</h2>
+      {/* Faculty Coordinators Section */}
+      <h2 className="grid-title">Faculty Coordinators</h2>
       <div className="card-grid">
-        {coordinators.map((c) => (
+        {facultyCoordinators.map((c) => (
+          <div className="person-card" key={c.email}>
+            <img src={c.photo} alt={c.name} />
+            <div className="person-info">
+              <h3>{c.name}</h3>
+              <p className="muted">{c.role}</p>
+              <p>📞 {c.phone}</p>
+              <p>✉️ {c.email}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Student Leads Section */}
+      <h2 className="grid-title">Student Leads</h2>
+      <div className="card-grid">
+        {studentLeads.map((c) => (
           <div className="person-card" key={c.email}>
             <img src={c.photo} alt={c.name} />
             <div className="person-info">

@@ -1,17 +1,54 @@
 .footer {
-  background-color: #2e1a14; /* dark vintage brown */
-  color: #f5e6cc;           /* vintage beige */
-  text-align: center;
-  padding: 10px 0;
-  margin-top: auto;         /* pushes footer to bottom */
+  display: flex;
+  justify-content: space-between; /* left, center, right */
+  align-items: center;
+  background-color: #2e1a14; 
+  color: #f5e6cc;
+  padding: 10px 20px;
   width: 100%;
-  position: relative;
-  bottom: 0;
-  font-family: 'Georgia', 'Times New Roman', serif; /* vintage font */
+  font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 14px;
   letter-spacing: 1px;
-}
-footer {
+  box-sizing: border-box;
   position: relative;
-  z-index: 20; /* ensure it’s above background layers */
+  z-index: 20;
+}
+
+/* Text in the center */
+.footer p {
+  margin: 0;
+  text-align: center;
+  flex: 1;
+}
+
+/* Logos */
+.sairam {
+  width: 120px;  /* desktop width */
+  height: auto;
+}
+
+.leo {
+  width: 60px;  /* desktop width */
+  height: auto;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    padding: 10px 10px;
+  }
+
+  .footer p {
+    order: 2; /* text in middle */
+  }
+
+  .sairam, .leo {
+    order: 1; /* logos on top/bottom */
+    width: 100px; /* smaller logos for mobile */
+    height: auto;
+  }
 }

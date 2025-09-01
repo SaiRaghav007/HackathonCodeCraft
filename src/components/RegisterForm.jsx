@@ -13,19 +13,35 @@ import snacksIcon from "/src/assets/snack.png";
 import submitIcon from "/src/assets/submit.png";
 import awardsIcon from "/src/assets/awards.png";
 
+import trophyIcon from "/src/images/trophypricepool.png"; // add a trophy icon in your assets
+
+const PrizePool = () => {
+  const prizes = [
+    { position: "1st Prize", amount: "₹5000" },
+    { position: "2nd Prize", amount: "₹3000" },
+    { position: "3rd Prize", amount: "₹2000" },
+  ];
+
+  return (
+    <div className="prize-pool-section">
+      <h2 className="timeline-title">Prize Pool</h2>
+      <div className="prize-cards">
+        {prizes.map((p, idx) => (
+          <div key={idx} className="prize-card">
+            <img src={trophyIcon} alt="Trophy" className="prize-icon" />
+            <h3>{p.position}</h3>
+            <p>{p.amount}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+
+
 const Timeline = () => {
-  // const events = [
-  //   { time: "9:30 AM", desc: "Assemble at Hall", icon: assembleIcon },
-  //   { time: "10:30 AM", desc: "Problem Statement Released", icon: problemIcon },
-  //   { time: "1:00 PM", desc: "Lunch Break", icon: lunchIcon },
-  //   { time: "4:00 PM", desc: "Tea & Snacks", icon: teaIcon },
-  //   { time: "6:00 PM", desc: "Progress Evaluation", icon: evalIcon },
-  //   { time: "8:00 PM", desc: "Dinner Break", icon: dinnerIcon },
-  //   { time: "10:00 PM", desc: "Coding Continues", icon: codingIcon },
-  //   { time: "2:00 AM", desc: "Midnight Snacks", icon: snacksIcon },
-  //   { time: "8:00 AM", desc: "Final Submission", icon: submitIcon },
-  //   { time: "11:00 AM", desc: "Presentation & Awards", icon: awardsIcon },
-  // ];
    const events = [
     { time: "9:30 AM", desc: "Assemble at Hall",icon:assembleIcon },
     { time: "10:30 AM", desc: "Problem Statement Released",icon:problemIcon },
@@ -41,6 +57,7 @@ const Timeline = () => {
 
 
   return (
+    
     <div className="timeline">
       {events.map((event, idx) => (
         <div key={idx} className="timeline-event">
@@ -100,7 +117,7 @@ const RegisterForm = () => {
             <button>Register Now</button>
           </div>
         </div>
-
+        <PrizePool/>
         {/* Timeline Section */}
         <h2 className="timeline-title">24-Hour Event Timeline</h2>
         <Timeline />
